@@ -2,10 +2,14 @@
 use_default_settings: true
 server:
   # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
-  secret_key: "ultrasecretkey"  # change this!
-  limiter: true  # can be disabled for a private instance
+  secret_key: "2bfe04f1b126b5c27aee490d306639079a44dcad59ae476059b9b8157bdc3cd3"
+  limiter: false
   image_proxy: true
 ui:
   static_use_hash: true
-redis:
-  url: redis://redis:6379/0
+
+search:
+    formats:
+        - html
+        - json
+    language: zh-TW
