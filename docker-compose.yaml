@@ -5,7 +5,6 @@ services:
     restart: always
     networks:
       apps:
-        ipv4_address: 192.168.0.87
     ports:
       - "30001:8080"
     volumes:
