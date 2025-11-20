@@ -1,13 +1,11 @@
-version: "3.7"
-
 services:
   searxng:
     container_name: searxng
     image: docker.io/searxng/searxng:latest
     restart: always
     networks:
-      searxng:
-        ipv4_address: 172.18.0.87
+      apps:
+        ipv4_address: 192.168.0.87
     ports:
       - "30001:8080"
     volumes:
@@ -30,10 +28,7 @@ services:
         max-file: "1"
 
 networks:
-  searxng:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.18.0.0/16
+  apps:
+    external: true
 
 volumes: {}
